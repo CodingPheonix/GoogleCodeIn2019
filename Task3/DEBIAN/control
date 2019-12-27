@@ -1,0 +1,8 @@
+Package: 2048 
+Version: 1.0 
+Section: gamesetc 
+Priority: extra 
+Architecture: all 
+Depends: tkinter
+Maintainer: agraw17107@gapps.uwcsea.edu.sg
+Description: 2048 clone
