@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Encoding=UTF-8
+Name=2048
+Comment="2048 GUI game"
+Exec=python3 /usr/bin/2048.py
+Terminal=false
