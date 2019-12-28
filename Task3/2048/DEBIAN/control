@@ -1,0 +1,8 @@
+Package: 2048
+Version: 1.0
+Section: gamesetc
+Architecture: all
+Maintainer: agraw17107@gapps.uwcsea.edu.sg
+Depends: python-tk, python3
+Description: 2048 clone
+
