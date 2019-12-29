@@ -5,7 +5,6 @@ import math
 
 def key(event):
     tmp = str(repr(event.char))
-    print(tmp[1] == "w")
     if(tmp[1] == "w"):
         slide("up")
     elif(tmp[1] == "s"):
