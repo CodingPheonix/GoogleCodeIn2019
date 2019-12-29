@@ -166,7 +166,7 @@ def slide(direction):
     newGame = Button(root, text ="New Game", command=restart, font=("Arial",20), width = int((size-2*(size-border*1.25)/4)/10+5))
     newGameWindow = canvas.create_window((size-border*1.25)/8, (size-border*1.25)/64, anchor=NW, window=newGame)
 
-    scoreBg = canvas.create_rectangle((size-border*1.25)/8, (size-border*1.25)/16+5, 5+2*border+(math.floor((size-border*1.25)/16)*len("Score: " + str(score)))/2, (size-border*1.25)/16+2*math.floor((size-border*1.25)/16), fill = '#ecf0f1')
+    scoreBg = canvas.create_rectangle((size-border*1.25)/8, (size-border*1.25)/16+5, 5+2*border+(math.floor((size-border*1.25)/16)*len("Score: " + str(score)))/1.5, (size-border*1.25)/16+2*math.floor((size-border*1.25)/16), fill = '#ecf0f1')
     scoreObj = canvas.create_text((size-border*1.25)/8+5+border/2, (size-border*1.25)/16+math.floor((size-border*1.25)/16), text = "Score: " + str(score), font = ("Arial", math.floor((size-border*1.25)/16)), anchor=W)
 
     for i in range(4):
@@ -231,7 +231,7 @@ canvas.pack()
 newGame = Button(root, text ="New Game", command=restart, font=("Arial",20), width = int((size-2*(size-border*1.25)/4)/10+5))
 newGameWindow = canvas.create_window((size-border*1.25)/8, (size-border*1.25)/64, anchor=NW, window=newGame)
 
-scoreBg = canvas.create_rectangle((size-border*1.25)/8, (size-border*1.25)/16+5, 5+2*border+(math.floor((size-border*1.25)/16)*len("Score: " + str(score)))/2, (size-border*1.25)/16+2*math.floor((size-border*1.25)/16), fill = '#ecf0f1')
+scoreBg = canvas.create_rectangle((size-border*1.25)/8, (size-border*1.25)/16+5, 5+2*border+(math.floor((size-border*1.25)/16)*len("Score: " + str(score)))/1.5, (size-border*1.25)/16+2*math.floor((size-border*1.25)/16), fill = '#ecf0f1')
 scoreObj = canvas.create_text((size-border*1.25)/8+5+border/2, (size-border*1.25)/16+math.floor((size-border*1.25)/16), text = "Score: " + str(score), font = ("Arial", math.floor((size-border*1.25)/16)), anchor=W)
 
 firstTwo = [math.floor(random()*16) for i in range(2)]
