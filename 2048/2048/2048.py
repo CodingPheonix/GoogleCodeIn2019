@@ -4,9 +4,16 @@ from random import *
 import math
 
 def key(event):
-    tmp = int(str(repr(event.char))[len(str(repr(event.char)))-2])
-    slide(DIRECTIONS[tmp])
-
+    tmp = str(repr(event.char))
+    print(tmp[1] == "w")
+    if(tmp[1] == "w"):
+        slide("up")
+    elif(tmp[1] == "s"):
+        slide("down")
+    elif(tmp[1] == "d"):
+        slide("right")
+    elif(tmp[1] == "a"):
+        slide("left")
 def restart():
     global firstTwo
     global grid
@@ -191,10 +198,10 @@ class GridObject:
         self.y = gridy
 
         self.object = canvas.create_rectangle((size-border*1.25)/4*self.x+border,
-                                               (size-border*1.25)/4*self.y+border+panelHeight,
-                                               (size-border*1.25)/4*self.x+(size-border*1.25)/4,
-                                               (size-border*1.25)/4*self.y+(size-border*1.25)/4+panelHeight,
-                                                fill = '#bdc3c7' if self.value == 0 else colors[int(math.log(self.value,2)%len(colors))-1])
+                                              (size-border*1.25)/4*self.y+border+panelHeight,
+                                              (size-border*1.25)/4*self.x+(size-border*1.25)/4,
+                                              (size-border*1.25)/4*self.y+(size-border*1.25)/4+panelHeight,
+                                               fill = '#bdc3c7' if self.value == 0 else colors[int(math.log(self.value,2)%len(colors))-1])
         self.text = canvas.create_text((size-border*1.25)/4*self.x+textPadding+border, (size-border*1.25)/4*self.y+textPadding+border+panelHeight, text=str(self.value) if self.value != 0 else "", width=(size-border*1.25)/4-2*textPadding, font = ("Arial", math.floor(textSize)))
 
     def draw(self):
@@ -202,11 +209,9 @@ class GridObject:
                                               (size-border*1.25)/4*self.y+border+panelHeight,
                                               (size-border*1.25)/4*self.x+(size-border*1.25)/4,
                                               (size-border*1.25)/4*self.y+(size-border*1.25)/4+panelHeight,
-                                                fill = '#bdc3c7' if self.value == 0 else colors[int(math.log(self.value,2)%len(colors))-1])
+                                               fill = '#bdc3c7' if self.value == 0 else colors[int(math.log(self.value,2)%len(colors))-1])
         self.text = canvas.create_text((size-border*1.25)/4*self.x+textPadding+border, (size-border*1.25)/4*self.y+textPadding+border+panelHeight, text=str(self.value) if self.value != 0 else "", width=(size-border*1.25)/4-2*textPadding, font = ("Arial", math.floor(textSize)))
 
-    
-DIRECTIONS = ["up", "down", "left", "right"]
 size = 700 
 border = 75
 score = 0
