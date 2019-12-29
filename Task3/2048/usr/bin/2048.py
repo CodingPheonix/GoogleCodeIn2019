@@ -163,7 +163,7 @@ def slide(direction):
 
     canvas.delete(ALL)
 
-    newGame = Button(root, text ="New Game", command=restart, font=("Arial",20), width = int(((size-2*(size-border*1.25)/4)/10+5)/1.3))
+    newGame = Button(root, text ="New Game", command=restart, font=("Arial",20), width = int(((size-2*(size-border*1.25)/4)/10+5)/1.3), bg="#c44569")
     newGameWindow = canvas.create_window((size-border*1.25)/8, (size-border*1.25)/64, anchor=NW, window=newGame)
 
     scoreBg = canvas.create_rectangle((size-border*1.25)/8, 15+(size-border*1.25)/16+5, 5+2*border+(math.floor((size-border*1.25)/16)*len("Score: " + str(score)))/1.5, 15+(size-border*1.25)/16+2*math.floor((size-border*1.25)/16), fill = '#ecf0f1')
