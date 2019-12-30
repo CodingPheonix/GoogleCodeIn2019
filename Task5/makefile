@@ -1,4 +1,3 @@
-plot:
-	make output
-	./output
-	python3 plot.py
+execute_program:
+	make code.cpp
+	./code
