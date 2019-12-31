@@ -6,12 +6,11 @@ f = open("output.txt", "r")
 
 #Plot points here
 pointStr = f.readlines()
-for i in pointStr:
-    tmp = [int(x) for x in i if x != ',' and x != '\n']
-    ax.plot(tmp[0], tmp[1], 'o', color='black')
+points = [list(map(int, i[:-1].split(","))) for i in pointStr]
+plt.scatter(*zip(*points))
 
 ax.set(xlabel='x-axis', ylabel='y-axis',
-       title='Some data that outputted by the C++ program')
+       title='Some data that was outputted by the C++ program')
 ax.grid()
 
 plt.show()
