@@ -1,5 +1,6 @@
 .PHONY = plot
 
 plot:
-	./output
-	python3 plot.py
+	@make output
+	@./output
+	@python3 plot.py
