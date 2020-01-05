@@ -17,8 +17,8 @@ def leaderboard(p):
 def questionGen(diff):
     
     op = math.floor(random()*3)
-    firstNum = 2*diff+math.floor(random()*20)-math.floor(random()*diff*4)
-    secondNum = 2*diff+math.floor(random()*20)-math.floor(random()*diff*4)
+    firstNum = math.floor(random()*diff*5)-math.floor(random()*diff*5)
+    secondNum = math.floor(random()*diff*5)-math.floor(random()*diff*5)
     
     if (op == 0):
         operation="+"
@@ -34,9 +34,9 @@ def questionGen(diff):
              (str(firstNum)+" "+operation+" "+str(secondNum)+" = ?"),
               sample(
                  [answer,
-                  int(random()*firstNum*secondNum-random()*firstNum*secondNum),
-                  int(random()*firstNum*secondNum-random()*firstNum*secondNum),
-                  int(random()*firstNum*secondNum-random()*firstNum*secondNum)], 4
+                  int((random()*firstNum*secondNum-random()*firstNum*secondNum)+(random()*diff*3-random()*diff*3)),
+                  int((random()*firstNum*secondNum-random()*firstNum*secondNum)+(random()*diff*3-random()*diff*3)),
+                  int((random()*firstNum*secondNum-random()*firstNum*secondNum)+(random()*diff*3-random()*diff*3))], 4
               )
             ]
            )
@@ -133,7 +133,8 @@ def levelPlay(level, peoplePlaying, personToPlay):
         canvas.create_text(w/2, h/2, text="Question #"+str(math.ceil(r/int(peoplePlaying)))+" out of 5", font=("Arial",25))
         if (personToPlay==1):
             beforeScore=score.copy()
-            question = questionGen(level)
+
+        question = questionGen(level)
 
         canvas.create_text(w/2, h*0.4, text=question[1], font=("Arial",25))
         var = IntVar()
