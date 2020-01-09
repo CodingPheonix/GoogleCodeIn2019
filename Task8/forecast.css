@@ -1,0 +1,99 @@
+* {box-sizing: border-box;}
+
+body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: 100% 100%;
+}
+  
+h1 {
+    position: absolute;
+    color: #FFFFFF;
+    text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+    font-family: Verdana, sans-serif;
+    font-size:35px;
+}
+
+p {
+    position: absolute;
+    right:50%;
+    transform:translate(50%, 50%);
+    font-size: 35px;
+    font-weight: bolder;
+    text-shadow: -1.5px 0 white, 0 1.5px white, 1.5px 0 white, 0 -1.5px white;
+}
+
+input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+}
+
+.search-container {
+    position: absolute;
+    bottom : 7.5%;
+    left : 50%;
+    transform: translate(-50%, 0%);
+}
+
+.search-container button {
+    padding: 8px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background: #ccc;
+}
+
+#name {
+    position: absolute;
+    font-size:65px;
+    transform:translate(50%, 50%);
+    right:50%;
+    top:10%;
+}
+#icon {
+    position: absolute;
+    width: 135px;
+    height: 135px;
+    top: 21.5%;
+    right:50%;
+    transform:translate(50%, 50%);
+}
+#date{
+    top:5%;
+}
+
+#windspeed{
+    bottom:20%;
+}
+
+#winddeg{
+    bottom:15%;
+}
+
+#sunrise{
+    bottom:40%;
+}
+
+#sunset{
+    bottom:35%;
+}
+
+#pressure{
+    bottom: 25%;
+}
+
+#humidity{
+    bottom: 30%;
+}
+
+#temp{
+    bottom: 45%;
+}
