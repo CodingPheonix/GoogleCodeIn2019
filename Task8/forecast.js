@@ -58,9 +58,12 @@ request.onload = function() {
     seconds = "0" + date.getSeconds();
     Sunset.innerHTML = "Sunset: " + hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
 
-    WindSpeed.innerHTML = "Wind Speed: "+data.wind.speed 
-    WindDeg.innerHTML =  "Wind Degrees: "+data.wind.deg;
-
+    WindSpeed.innerHTML = "Wind Speed: "+data.wind.speed;
+    if (data.wind.def != undefined){ 
+      WindDeg.innerHTML =  "Wind Degrees: "+data.wind.deg;
+    } else {
+      WindDeg.innerHTML =  "Wind Degrees: 0";
+    }
     Humidity.innerHTML = "Humidity: " + data.main.humidity;
     Temp.innerHTML = "Temperature: " + Math.round(data.main.temp_min-273.15) + "°C | " + Math.round(data.main.temp_max-273.15) + "°C";
     Pressure.innerHTML = "Pressure: " + data.main.pressure;
