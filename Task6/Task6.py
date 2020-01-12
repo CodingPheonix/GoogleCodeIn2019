@@ -11,7 +11,7 @@ fig, ax = plt.subplots()
 
 for i in range(50):
     start = time.time()
-    np.dot(np.random.randint(6, size=(5*(i+1),5*(i+1))), np.random.randint(6, size=(5*(i+1), 5*(i+1))))
+    np.dot(np.random.randint(6, size=(5*(i+1),5*(i+1))),np.random.randint(6, size=(5*(i+1),5*(i+1))))
     end = time.time()
     npdata.append([5*(i+1), end-start])
 
@@ -21,6 +21,7 @@ for i in range(50):
     
     X = [[int(random()*6) for j in range(5*(i+1))] for k in range(5*(i+1))]
     Y = [[int(random()*6) for j in range(5*(i+1))] for k in range(5*(i+1))]
+    
     [[sum(a*b for a,b in zip(X_row,Y_col)) for Y_col in zip(*Y)] for X_row in X]
     
     end = time.time()
