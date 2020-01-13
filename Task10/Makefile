@@ -1,3 +1,8 @@
-execute_program:
-	make code.cpp
-	./code
+.PHONY = all execute compile
+
+all: compile execute
+
+compile:
+	@make code.cpp
+execute:
+	@./code
