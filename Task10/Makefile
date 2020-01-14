@@ -3,6 +3,6 @@
 all: compile execute
 
 compile:
-	@make code.cpp
+	@make code
 execute:
 	@./code
