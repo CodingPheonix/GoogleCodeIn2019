@@ -75,8 +75,9 @@ int HTTPPost(bool ON){
   
     if (client.connect( "api.thingspeak.com" , 80)){
 
-       String postData= "api_key=" + writeAPIKey+"field1="+ON*1;
-            
+        String postData= "api_key="+writeAPIKey+"field1="+ON*1;
+        Serial.println(postData);
+
         // POST data via HTTP.
         Serial.println( "Connecting to ThingSpeak for update..." );
         Serial.println();
