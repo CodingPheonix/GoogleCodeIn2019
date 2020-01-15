@@ -1,8 +1,6 @@
-.PHONY = all execute compile
-
 all: compile execute
 
 compile:
-	@make code
+	make code
 execute:
-	@./code
+	./code

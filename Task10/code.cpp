@@ -5,4 +5,3 @@ int main(){
 	cout << "CodingPheonix";
 	return 0;
 }
-
