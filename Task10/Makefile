@@ -1,6 +1,7 @@
 all: compile execute
 
 compile:
-	make code
+	g++ code.cpp -o executable
 execute:
-	./code
+	./executable
+
