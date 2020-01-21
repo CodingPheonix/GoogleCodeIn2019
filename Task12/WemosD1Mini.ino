@@ -6,15 +6,13 @@ const char* password = "23190914"; //Enter Password
 #define LED_PIN D1
 #define SOIL_PIN A0
 #define TIMEOUT  5000
-#define SLEEP_TIME_SECONDS 1800
+#define SLEEP_TIME_SECONDS 10
 
-int Total = 0;
+String writeAPIKey="YZECBAM777W3KPA3";
 
-String writeAPIKey="DF49N0QNDFLGMRS9";
-String readAPIKey="GVIC0LMXQ3HPU5EE";
-String channelID="965561";
 int numMeasure = 5;
 int ADCValue = 0;
+int Total = 0;
 
 WiFiClient client;
 
@@ -40,6 +38,7 @@ void setup(void)
 
 void loop()
 {
+    
 
     //Get data from the soil pin
     int data = readSoil( numMeasure ); 
@@ -54,16 +53,12 @@ void loop()
        delay(15000);
        digitalWrite( LED_PIN , LOW );
        Total = Total + 15;
-
     }
-    
     HTTPPost(IS_ON);
     
     delay( 1000 );
     Serial.print( "Goodnight for "+String( SLEEP_TIME_SECONDS ) + " Seconds" );
-    ESP.deepSleep( SLEEP_TIME_SECONDS * 1000000 );
-
-    //Similar to --> delay( 20000 );
+    delay( SLEEP_TIME_SECONDS * 1000 );
 }
 
 long readSoil(int numAve)
