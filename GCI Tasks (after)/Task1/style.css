@@ -1,0 +1,53 @@
+p {
+    position: flex;
+    font-size: 17.5px;
+}
+
+h1 {
+    font-size: 25px;
+    position: center;
+}
+
+html {
+    margin: 0; 
+    height: 100%; 
+    overflow: hidden
+}
+
+.center {
+    overflow: auto;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    width:auto;
+    height:auto;
+    max-height: 45%;
+    max-width: 100%;
+  }
+
+input[type=button]{
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
