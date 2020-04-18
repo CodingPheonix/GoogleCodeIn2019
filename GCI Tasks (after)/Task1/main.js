@@ -48,10 +48,12 @@ function gameOver(){
 
     document.getElementById("questionNum").innerHTML = "Game Over<br />Score: "+questionsCorrect+"/"+questionList.length;
     if (questionsCorrect/questionList.length >= 0.5){
+        document.getElementById("victory").play();
         document.getElementById("output").innerHTML = "You did it!<br />Congrats on passing this quiz";
         document.getElementById("image").src = "images/check.png";
 
     } else {
+        document.getElementById("lose").play();
         document.getElementById("output").innerHTML = "Better luck next time! :(";
         document.getElementById("image").src = "images/cross.png";
     }
