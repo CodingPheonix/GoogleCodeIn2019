@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload new File</title>
+</head>
+<h1>Upload new File</h1>
+<form method=post enctype=multipart/form-data>
+  <input type=file name=file>
+  <input type=submit value=Upload>
+</form>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
+<br>
+<body onload="addTab()">
+  <script>
+    function readTextFile(callback, file) {
+        var httpRequest = new XMLHttpRequest();
+        httpRequest.onreadystatechange = function () {
+            if (httpRequest.readyState === 4) { // request is done
+                if (httpRequest.status === 200) { // successfully
+                    callback(httpRequest.responseText); // we're calling our method
+                }
+            }
+        };
+        httpRequest.open('GET', "/static/uploads/"+file);
+        httpRequest.send();
+
+    }
+    function addTab(){
+        var files = ("{{ files }}".slice(1,-6).split("&#39;").join("")).split(", ");
+
+        files.forEach(function (file){
+
+            var btn = document.createElement("BUTTON");
+            btn.setAttribute('class', 'tablinks');
+            btn.setAttribute('onclick', 'openTab(event,"'+file+'");');
+
+            btn.innerHTML = file;
+            document.getElementById("tabElement").appendChild(btn);
+
+            var content = document.createElement('div');
+            content.setAttribute('class', 'tabcontent');
+            content.setAttribute('id', file);
+
+            var contentChild = document.createElement('p');
+
+            readTextFile(function (result) {
+               contentChild.innerHTML = result.split("\n").join("<br/>");
+            }, file);
+
+            content.appendChild(contentChild);
+            document.body.appendChild(content);
+        });
+    }
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            console
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+  </script>
+  <div class="tab" id="tabElement"></div>
+</body>
+</html>
